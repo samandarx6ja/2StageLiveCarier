@@ -44,6 +44,10 @@
   align-items: center;
 }
 
+.wrapper__flexstart{
+  justify-content: flex-start;
+}
+
 .search__button {
   position: relative;
   background: #f7971e;
@@ -83,6 +87,8 @@
   margin: 15px !important;
   padding: 30px 15px 30px 50px;
   width: 320px;
+  color: #3591cf;
+
   h1 {
     display: flex;
     span {
@@ -92,5 +98,15 @@
       top: 24px;
       left: 12px;
     }
+  }
+}
+
+.loader__spin{
+  position: relative;
+  img{
+    position: absolute;
+    top: 0px ;
+    right: 0;
+    transform: translate(-50%,50%);
   }
 }

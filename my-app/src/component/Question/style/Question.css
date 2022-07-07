@@ -54,6 +54,12 @@
           align-items: center;
 }
 
+.wrapper__flexstart {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
 .search__button {
   position: relative;
   background: #f7971e;
@@ -100,6 +106,7 @@
   margin: 15px !important;
   padding: 30px 15px 30px 50px;
   width: 320px;
+  color: #3591cf;
 }
 
 .question__about h1 {
@@ -114,5 +121,17 @@
   padding: 15px;
   top: 24px;
   left: 12px;
+}
+
+.loader__spin {
+  position: relative;
+}
+
+.loader__spin img {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
 }
 /*# sourceMappingURL=Question.css.map */
