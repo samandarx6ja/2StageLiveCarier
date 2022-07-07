@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.res_{width: 600px;transform: translateX(100px) translateY(5px);}
+.res_a_vch > a{
+    width: 100px;
+    font-size: 11px !important;
+    padding: 3px;
+    color: #0e70b1;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+}
+.res_strong_a{
+    font-size: 11px !important;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 3px;
+    color: #46464E;
+    width: 200px;
+}
