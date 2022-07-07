@@ -3,7 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
-.res_{width: 600px;transform: translateX(100px) translateY(5px);}
+.res_{
+    width: 600px;
+    transform: translateX(100px) translateY(5px);}
 .res_a_vch > a{
     width: 100px;
     font-size: 11px !important;
