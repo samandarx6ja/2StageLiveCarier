@@ -58,6 +58,9 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
 }
 
 .search__button {
@@ -133,5 +136,47 @@
   right: 0;
   -webkit-transform: translate(-50%, 50%);
           transform: translate(-50%, 50%);
+}
+
+.search__card {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.search__card .search__item {
+  margin-right: 15px;
+}
+
+.search__card .search__item p {
+  color: #4a90e2;
+  font-size: 12px;
+  padding: 0;
+  margin-top: -7px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.search__card .search__description p {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9b9b9b;
+}
+
+.search__card .search__description p span {
+  background-color: #f7971e;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 4px 15px 4px 15px;
+}
+
+.search__card .search__description h1 {
+  color: #3591cf;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=Question.css.map */

@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.res_{
+    width: 600px;
+    transform: translateX(100px) translateY(5px);}
+.res_a_vch > a{
+    width: 100px;
+    font-size: 11px !important;
+    padding: 3px;
+    color: #0e70b1;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+}
+.res_strong_a{
+    font-size: 11px !important;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 3px;
+    color: #46464E;
+    width: 200px;
+}
+.res_img_result{
+ transform: translateX(680px) translateY(60px);
+}
+.res_hd_h1{
+    width: 900px;
+    transform: translateX(100px) translateY(-460px);
+    font-size: 45px;
+    font-weight: 200;
+    line-height:4rem;
+}
+.res_hd_p , .res_hd_p2{
+    width: 500px;
+    font-size: 16px;
+    transform: translateX(100px) translateY(-430px);
+    line-height: 1.5rem;
+}.res_hd_p2{transform: translateX(100px) translateY(-400px);}
