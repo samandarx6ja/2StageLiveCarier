@@ -185,12 +185,63 @@
   float: left;
   padding: 8px 16px;
   text-decoration: none;
-  -webkit-transition: background-color .3s;
-  transition: background-color .3s;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
   margin-top: 20px;
 }
 
 .pagination a:hover:not(.active) {
   background-color: #ddd;
+}
+
+.by__topic {
+  width: 400px;
+}
+
+.by__topic .topic__item {
+  border: 1px solid #c4c4c4;
+  margin: 15px !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+.by__topic .topic__item h1 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.by__topic .topic__item .browse__topic {
+  display: inline-block;
+}
+
+.by__topic .topic__item .browse__topic span {
+  cursor: pointer;
+  margin: 7px 0;
+  padding: 5px;
+  font-size: 25px;
+  border-radius: 20px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: #3691d1;
+  color: #fff;
+}
+
+.by__topic .topic__item .browse__topic p {
+  cursor: pointer;
+  margin: 7px 0;
+  padding: 5px;
+  border-radius: 20px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: #3691d1;
+  color: #fff;
+}
+
+.by__topic .browse__topic p {
+  font-size: 200;
 }
 /*# sourceMappingURL=Question.css.map */

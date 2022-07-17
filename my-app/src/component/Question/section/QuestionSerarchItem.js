@@ -75,7 +75,33 @@ const QuestionSerarchItem = () => {
             </TabPanel>
           </TabContext>
         </Box>
-        <div className="by__topic">hggdfbgifd</div>
+        <div className="by__topic">
+          <div className="topic__item">
+            <h1>Browse by Topic</h1>
+
+            {data.map((item) => (
+              <div className="browse__topic" key={item.id}>
+                {item.job_title.length < 11 ? (
+                  <span>{item.job_title}</span>
+                ) : (
+                  <p>{item.job_title}</p>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="expert">
+            {
+              data.map((item) =>{
+                <div className='expert__wrapper'>
+                    <h1>Expert Contributors</h1>
+                    <div>
+                      
+                    </div>
+                </div>
+              })
+            }
+          </div>
+        </div>
       </div>
     </div>
   )
