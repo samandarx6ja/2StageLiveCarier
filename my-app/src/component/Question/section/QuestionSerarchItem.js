@@ -11,6 +11,7 @@ import PaginationData from './PaginationData'
 const QuestionSerarchItem = () => {
   const [value, setValue] = React.useState('1')
   const [data, setData] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
   const [loader, setLoader] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(8)
@@ -50,6 +51,24 @@ const QuestionSerarchItem = () => {
 
   return (
     <div className="question__container">
+      <div className="wrapper">
+        <div className="search__button">
+          <span></span>
+          <input
+            type="text"
+            placeholder="Search for a question."
+            onChange={(e) => {
+              setSearchTerm(e.target.value)
+            }}
+          />
+          <button>SEARCH</button>
+        </div>
+        <div className="question__about">
+          <h1>
+            <span></span> About LiveCareer Q&A{' '}
+          </h1>
+        </div>
+      </div>
       <div className="wrapper wrapper__flexstart ">
         <Box sx={{ width: '75%', typography: 'body1' }}>
           <TabContext value={value}>
@@ -63,7 +82,11 @@ const QuestionSerarchItem = () => {
               </TabList>
             </Box>
             <TabPanel sx={{ p: '10px 0 0 0' }} value="1">
-              <QuestionDataPopular data={currentPosts} loader={loader} />
+              <QuestionDataPopular
+                data={currentPosts}
+                loader={loader}
+                searchTerm={searchTerm}
+              />
               <PaginationData
                 postsPerPage={postsPerPage}
                 totalPosts={data.length}
@@ -72,6 +95,11 @@ const QuestionSerarchItem = () => {
             </TabPanel>
             <TabPanel value="2">
               <QuestionDataAsked data={data} loader={loader} />
+              <PaginationData
+                postsPerPage={postsPerPage}
+                totalPosts={data.length}
+                paginate={paginate}
+              />
             </TabPanel>
           </TabContext>
         </Box>
@@ -90,16 +118,12 @@ const QuestionSerarchItem = () => {
             ))}
           </div>
           <div className="expert">
-            {
-              data.map((item) =>{
-                <div className='expert__wrapper'>
-                    <h1>Expert Contributors</h1>
-                    <div>
-                      
-                    </div>
-                </div>
-              })
-            }
+            {data.map((item) => {
+              ;<div className="expert__wrapper">
+                <h1>Expert Contributors</h1>
+                <div></div>
+              </div>
+            })}
           </div>
         </div>
       </div>

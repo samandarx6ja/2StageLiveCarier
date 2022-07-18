@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from 'react'
 
-
-const QuestionDataPopular = ({data, loader}) => {
-
-  if(loader){
-    return  (
+const QuestionDataPopular = ({ data, loader, searchTerm }) => {
+  if (loader) {
+    return (
       <div className="loader__spin">
-          <img src={require('../img/loader2.gif')} alt="12" />
-        </div>
+        <img src={require('../img/loader2.gif')} alt="12" />
+      </div>
     )
   }
- 
+
   return (
     <>
-       { data.map((item) => (
+      {data
+        .filter((val) => {
+          if (searchTerm == '') {
+            return val
+          } else if (
+            val.description1.toLowerCase().includes(searchTerm.toLowerCase())
+          ) {
+            return val
+          }
+        })
+        .map((item) => (
           <div className="search__card" key={item.id}>
             <div className="search__item">
               <img src={`${item.avatar}`} alt="photo human" />
@@ -27,7 +35,7 @@ const QuestionDataPopular = ({data, loader}) => {
                   : 2022 - item.created_date.slice(-4) + ' years'}{' '}
                 ago{' '}
               </p>
-              <h1>{item.description1}</h1>
+              <h1>{item.description1}?</h1>
               <p>
                 <span>3 answers</span>
               </p>

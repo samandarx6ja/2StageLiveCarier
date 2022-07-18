@@ -11,7 +11,30 @@ const QuestionDataAsked = ({data, loader}) => {
   }
 
   return (
-    <div>QuestionDataAsked</div>
+    <div>
+      {data
+        .map((item) => (
+          <div className="search__card" key={item.id}>
+            <div className="search__item">
+              <img src={`${item.avatar}`} alt="photo human" />
+              <p>{item.first_name}</p>
+            </div>
+            <div className="search__description">
+              <p>
+                Asked{' '}
+                {'2022' === item.created_date.slice(-4)
+                  ? '12' - item.created_date.slice(0, 1) + ' month'
+                  : 2022 - item.created_date.slice(-4) + ' years'}{' '}
+                ago{' '}
+              </p>
+              <h1>{item.description1}?</h1>
+              <p>
+                <span>3 answers</span>
+              </p>
+            </div>
+          </div>
+        ))}
+    </div>
   )
 }
 
