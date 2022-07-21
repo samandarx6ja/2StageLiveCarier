@@ -92,10 +92,13 @@
   margin: 15px !important;
   padding: 30px 15px 30px 50px;
   width: 320px;
-  color: #3591cf;
 
   h1 {
     display: flex;
+    a{
+  color: #3591cf;
+
+    }
     span {
       position: absolute;
       background: url('../img/information.png') no-repeat;
@@ -216,6 +219,7 @@
   padding: 30px;
   text-align: center;
   margin-top: 50px;
+  margin-bottom: 50px;
   clear: both;
   h1{
     font-size: 24px;
@@ -225,9 +229,84 @@
     text-align: center;
   }
   .wrapper__question{
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    input {
+      background-color: white;
+    border: 1px solid #cccccc;
+    box-shadow: 0 1px 2px rgba(0 ,0, 0, 0.10);
+    color: rgba(0, 0, 0, 0.75);
+    display: block;
+    font-size: 1em;
+    padding: 0.5em;
+    height: 50px;
+    width: 80%;
+    border-radius: 3px;
+    margin-right: 20px;
+    &:focus{
+      color: #3591cf;
+    box-shadow: 2px 0px 10px rgb(230, 226, 226);
 
+    }
+    }
+    button{
+      border-width: 0px;
+    background-color: #f1604d;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 7px 10px 7px 10px;
+    font-size: 14px;
+    padding: 16px 35px;
+    color: #fff;
+    border-radius: 3px;
+    }
+  }
+}
+
+.footer__item{
+  border-top: 1px solid rgb(64, 64, 64);
+  border-bottom: 1px solid rgb(64, 64, 64);
+  padding: 15px 0px 15px 0;
+  text-align: center;
+  margin: 30px auto 100px;
+  max-width: 810px;
+}
+
+.about__typography{
+  h1{
+    padding: 10px 0;
+    font-family: 'Arial';
+
+    strong{
+      font-size: 35px;
+
+    }
+  }
+  p{
+    background-color: transparent;
+    color: rgb(191, 191, 191);
+    font-family: Arial;
+    font-size: 11pt;
+    letter-spacing: -0.1px;
+  }
+  h2{
+    padding: 10px 0;
+
+    font-size: 25px;
+
+  }
+}
+
+.expert{
+  .topic__expert{
+    display: flex;
+    .search__item{
+      img{
+        width: 50px;
+
+      }
+    }
   }
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 //Material ui react
 import { Box, Tab } from '@mui/material'
@@ -39,7 +40,6 @@ const QuestionSerarchItem = () => {
         console.log(err)
       })
   }, [])
-  console.log(data)
 
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage
@@ -65,7 +65,9 @@ const QuestionSerarchItem = () => {
         </div>
         <div className="question__about">
           <h1>
-            <span></span> About LiveCareer Q&A{' '}
+            <Link to="question/help">
+              <span></span> About LiveCareer Q&A{' '}
+            </Link>
           </h1>
         </div>
       </div>
@@ -117,13 +119,27 @@ const QuestionSerarchItem = () => {
               </div>
             ))}
           </div>
-          <div className="expert">
-            {data.map((item) => {
-              ;<div className="expert__wrapper">
-                <h1>Expert Contributors</h1>
-                <div></div>
+          <div className="expert topic__item">
+            <h1>Expert Contributors</h1>
+            {data.slice(0,4).map((item) => (
+              <div className="topic__expert" key={item.id}>
+                <div className="search__item">
+                  <img src={`${item.avatar}`} alt="photo human" />
+                </div>
+                <div className="search__description">
+                <p>{item.first_name}</p>
+
+                  <p>
+ 
+                    {'2022' === item.created_date.slice(-4)
+                      ? '12' - item.created_date.slice(0, 1) + " "
+                      : 2022 - item.created_date.slice(-4) + " " }
+                    Answers contributed
+                  </p>
+                 
+                </div>
               </div>
-            })}
+            ))}
           </div>
         </div>
       </div>

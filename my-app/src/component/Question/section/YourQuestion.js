@@ -5,6 +5,7 @@ const YourQuestion = () => {
     <div className='question__container'>
       <div className="question__your">
         <h1>Didn't see your question?</h1>
+        <span></span>
         <div className='wrapper__question'>
           <input
             type="text"
@@ -13,6 +14,8 @@ const YourQuestion = () => {
           <button>ASK</button>
         </div>
       </div>
+      <hr/>
+      <h1 className='footer__item'>Advertisement</h1>
     </div>
   )
 }

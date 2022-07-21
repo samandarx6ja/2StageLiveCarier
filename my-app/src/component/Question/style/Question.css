@@ -114,13 +114,16 @@
   margin: 15px !important;
   padding: 30px 15px 30px 50px;
   width: 320px;
-  color: #3591cf;
 }
 
 .question__about h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.question__about h1 a {
+  color: #3591cf;
 }
 
 .question__about h1 span {
@@ -256,6 +259,7 @@
   padding: 30px;
   text-align: center;
   margin-top: 50px;
+  margin-bottom: 50px;
   clear: both;
 }
 
@@ -268,6 +272,7 @@
 }
 
 .question__your .wrapper__question {
+  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,5 +282,79 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.question__your .wrapper__question input {
+  background-color: white;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.75);
+  display: block;
+  font-size: 1em;
+  padding: 0.5em;
+  height: 50px;
+  width: 80%;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+
+.question__your .wrapper__question input:focus {
+  color: #3591cf;
+  -webkit-box-shadow: 2px 0px 10px #e6e2e2;
+          box-shadow: 2px 0px 10px #e6e2e2;
+}
+
+.question__your .wrapper__question button {
+  border-width: 0px;
+  background-color: #f1604d;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 7px 10px 7px 10px;
+  font-size: 14px;
+  padding: 16px 35px;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.footer__item {
+  border-top: 1px solid #404040;
+  border-bottom: 1px solid #404040;
+  padding: 15px 0px 15px 0;
+  text-align: center;
+  margin: 30px auto 100px;
+  max-width: 810px;
+}
+
+.about__typography h1 {
+  padding: 10px 0;
+  font-family: 'Arial';
+}
+
+.about__typography h1 strong {
+  font-size: 35px;
+}
+
+.about__typography p {
+  background-color: transparent;
+  color: #bfbfbf;
+  font-family: Arial;
+  font-size: 11pt;
+  letter-spacing: -0.1px;
+}
+
+.about__typography h2 {
+  padding: 10px 0;
+  font-size: 25px;
+}
+
+.expert .topic__expert {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.expert .topic__expert .search__item img {
+  width: 50px;
 }
 /*# sourceMappingURL=Question.css.map */
