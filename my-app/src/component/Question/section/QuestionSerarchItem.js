@@ -16,6 +16,7 @@ const QuestionSerarchItem = () => {
   const [loader, setLoader] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(8)
+  const [noOfElement, setnoOfElement] = useState(15)
 
   const handleChange = (event, newValue) => {
     setValue(newValue)
@@ -49,6 +50,11 @@ const QuestionSerarchItem = () => {
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
+  const loadMore = () => {
+    setnoOfElement(noOfElement + 4)
+  }
+  const sliceShow = data.slice(0, noOfElement)
+
   return (
     <div className="question__container">
       <div className="wrapper">
@@ -71,8 +77,8 @@ const QuestionSerarchItem = () => {
           </h1>
         </div>
       </div>
-      <div className="wrapper wrapper__flexstart ">
-        <Box sx={{ width: '75%', typography: 'body1' }}>
+      <div className="wrapper wrapper__flexstart item1 ">
+        <Box className="box__nav">
           <TabContext value={value}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <TabList
@@ -95,8 +101,12 @@ const QuestionSerarchItem = () => {
                 paginate={paginate}
               />
             </TabPanel>
-            <TabPanel value="2">
-              <QuestionDataAsked data={data} loader={loader} />
+            <TabPanel sx={{ p: '10px 0 0 0' }} value="2">
+              <QuestionDataAsked
+                data={currentPosts}
+                loader={loader}
+                searchTerm={searchTerm}
+              />
               <PaginationData
                 postsPerPage={postsPerPage}
                 totalPosts={data.length}
@@ -109,7 +119,7 @@ const QuestionSerarchItem = () => {
           <div className="topic__item">
             <h1>Browse by Topic</h1>
 
-            {data.map((item) => (
+            {sliceShow.map((item) => (
               <div className="browse__topic" key={item.id}>
                 {item.job_title.length < 11 ? (
                   <span>{item.job_title}</span>
@@ -118,28 +128,33 @@ const QuestionSerarchItem = () => {
                 )}
               </div>
             ))}
+            <button
+              className="btn__seemore btn__weight"
+              onClick={() => loadMore()}
+            >
+              See More
+            </button>
           </div>
           <div className="expert topic__item">
             <h1>Expert Contributors</h1>
-            {data.slice(0,4).map((item) => (
+            {data.slice(0, 4).map((item) => (
               <div className="topic__expert" key={item.id}>
                 <div className="search__item">
                   <img src={`${item.avatar}`} alt="photo human" />
                 </div>
                 <div className="search__description">
-                <p>{item.first_name}</p>
+                  <p>{item.first_name}</p>
 
                   <p>
- 
                     {'2022' === item.created_date.slice(-4)
-                      ? '12' - item.created_date.slice(0, 1) + " "
-                      : 2022 - item.created_date.slice(-4) + " " }
+                      ? '12' - item.created_date.slice(0, 1) + ' '
+                      : 2022 - item.created_date.slice(-4) + ' '}
                     Answers contributed
                   </p>
-                 
                 </div>
               </div>
             ))}
+            <button className="btn__seemore">See More</button>
           </div>
         </div>
       </div>

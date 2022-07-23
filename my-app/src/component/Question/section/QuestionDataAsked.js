@@ -1,18 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const QuestionDataAsked = ({data, loader}) => {
-
-  if(loader){
-    return  (
+const QuestionDataAsked = ({ data, loader, searchTerm }) => {
+  if (loader) {
+    return (
       <div className="loader__spin">
-          <img src={require('../img/loader2.gif')} alt="12" />
-        </div>
+        <img src={require('../img/loader2.gif')} alt="12" />
+      </div>
     )
   }
 
   return (
-    <div>
+    <>
       {data
+        .filter((val) => {
+          if (searchTerm == '') {
+            return val
+          } else if (
+            val.description1.toLowerCase().includes(searchTerm.toLowerCase())
+          ) {
+            return val
+          }
+        })
         .map((item) => (
           <div className="search__card" key={item.id}>
             <div className="search__item">
@@ -34,7 +42,7 @@ const QuestionDataAsked = ({data, loader}) => {
             </div>
           </div>
         ))}
-    </div>
+    </>
   )
 }
 
