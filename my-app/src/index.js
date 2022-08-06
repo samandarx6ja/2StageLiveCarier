@@ -9,7 +9,7 @@ import Resume from './resumes/Res';
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <>
-    {/* <Navbars /> */}
+    <Navbars />
     <App />
   </>,
 )

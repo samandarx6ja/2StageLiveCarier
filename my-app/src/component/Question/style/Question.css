@@ -270,7 +270,7 @@
 
 .question__your h1 {
   font-size: 24px;
-  width: 460px;
+  max-width: 460px;
   margin: auto;
   font-weight: bold;
   text-align: center;

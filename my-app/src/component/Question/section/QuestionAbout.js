@@ -11,6 +11,7 @@ const QuestionAbout = () => {
   const [data, setData] = useState([])
   const [loader, setLoader] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
+  const [noOfElement, setnoOfElement] = useState(10)
 
   const baseUrl = {
     Api: 'https://my.api.mockaroo.com/samandar',
@@ -31,6 +32,13 @@ const QuestionAbout = () => {
         console.log(err)
       })
   }, [])
+
+
+  const loadMore = () => {
+    setnoOfElement(noOfElement + 4)
+  }
+  const sliceShow = data.slice(0, noOfElement)
+
   return (
     <>
     <QuestionHeader/>
@@ -96,7 +104,7 @@ const QuestionAbout = () => {
           <div className="topic__item">
             <h1>Browse by Topic</h1>
 
-            {data.map((item) => (
+            {sliceShow.map((item) => (
               <div className="browse__topic" key={item.id}>
                 {item.job_title.length < 11 ? (
                   <span>{item.job_title}</span>
@@ -105,14 +113,33 @@ const QuestionAbout = () => {
                 )}
               </div>
             ))}
+             <button
+              className="btn__seemore btn__weight"
+              onClick={() => loadMore()}
+            >
+              See More
+            </button>
           </div>
-          <div className="expert">
-            {data.map((item) => {
-              ;<div className="expert__wrapper">
-                <h1>Expert Contributors</h1>
-                <div></div>
+          <div className="expert topic__item">
+            <h1>Expert Contributors</h1>
+            {data.slice(0, 4).map((item) => (
+              <div className="topic__expert" key={item.id}>
+                <div className="search__item">
+                  <img src={`${item.avatar}`} alt="photo human" />
+                </div>
+                <div className="search__description">
+                  <p>{item.first_name}</p>
+
+                  <p>
+                    {'2022' === item.created_date.slice(-4)
+                      ? '12' - item.created_date.slice(0, 1) + ' '
+                      : 2022 - item.created_date.slice(-4) + ' '}
+                    Answers contributed
+                  </p>
+                </div>
               </div>
-            })}
+            ))}
+            <button className="btn__seemore">See More</button>
           </div>
         </div>
       </div>
